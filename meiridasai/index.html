@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛最新入口-最新地址发布页_每日大赛入口导航</title>
+<meta name="description" content="每日大赛最新入口页面汇总当前可用地址与入口说明，帮助访问者快速找到每日大赛最新入口，了解地址变化原因、备用线路与访问注意事项。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5f0e6'/%3E%3Cpath d='M18 44V22l14 12 14-12v22' fill='none' stroke='%23c0392b' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='48' r='3.5' fill='%23c0392b'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-soft:#4a453e;
+    --paper:#f5f0e6;
+    --paper-2:#fbf8f1;
+    --line:#ddd3c0;
+    --red:#c0392b;
+    --red-deep:#96291d;
+    --gold:#b8873a;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+  /* ---------- 页头 ---------- */
+  header.site{
+    background:var(--paper-2);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(6px);
+  }
+  .head-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:11px;min-width:0}
+  .brand-mark{
+    width:42px;height:42px;flex:0 0 42px;border-radius:11px;
+    background:var(--ink);display:grid;place-items:center;
+  }
+  .brand-mark svg{width:26px;height:26px}
+  .brand-text{
+    font-size:19px;font-weight:800;letter-spacing:.5px;
+    color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  nav.main ul{display:flex;gap:26px;list-style:none;font-size:15px;font-weight:500}
+  nav.main a{
+    color:var(--ink-soft);padding:4px 0;border-bottom:2px solid transparent;
+    transition:color .2s,border-color .2s;
+  }
+  nav.main a:hover{color:var(--red);border-color:var(--red)}
+
+  /* ---------- 首屏 ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(circle at 88% 12%,rgba(192,57,43,.10),transparent 46%),
+      radial-gradient(circle at 6% 92%,rgba(184,135,58,.12),transparent 42%),
+      var(--paper-2);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:44px;
+    align-items:center;padding:64px 0 58px;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;letter-spacing:2px;
+    color:var(--red-deep);background:rgba(192,57,43,.08);
+    border:1px solid rgba(192,57,43,.22);
+    padding:5px 13px;border-radius:999px;
+  }
+  .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--red);display:inline-block}
+  h1{
+    font-size:clamp(30px,4.6vw,48px);
+    line-height:1.22;font-weight:900;letter-spacing:.5px;
+    margin:20px 0 18px;
+  }
+  h1 .hl{
+    background:linear-gradient(transparent 62%,rgba(192,57,43,.24) 62%);
+    padding:0 2px;
+  }
+  .hero p.lead{
+    font-size:16.5px;color:var(--ink-soft);max-width:34em;margin-bottom:26px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-bottom:30px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 26px;border-radius:999px;font-size:15.5px;font-weight:700;
+    transition:transform .18s,box-shadow .18s,background .18s;
+  }
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(192,57,43,.28)}
+  .btn-primary:hover{background:var(--red-deep);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper-2);transform:translateY(-2px)}
+  .btn svg{width:16px;height:16px}
+  .hero-facts{
+    display:flex;flex-wrap:wrap;gap:26px;list-style:none;
+    border-top:1px dashed var(--line);padding-top:20px;
+  }
+  .hero-facts li{font-size:13.5px;color:var(--ink-soft)}
+  .hero-facts b{display:block;font-size:20px;color:var(--ink);font-weight:800;line-height:1.3}
+
+  .hero-art{
+    background:var(--ink);border-radius:22px;padding:26px;
+    color:#efe7d8;box-shadow:0 20px 44px rgba(28,26,23,.24);
+    position:relative;overflow:hidden;
+  }
+  .hero-art::after{
+    content:"";position:absolute;right:-70px;bottom:-70px;
+    width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle,rgba(192,57,43,.5),transparent 70%);
+  }
+  .art-title{font-size:12px;letter-spacing:3px;color:#b8ad9b;font-weight:700}
+  .art-list{list-style:none;margin-top:16px;display:grid;gap:11px;position:relative;z-index:1}
+  .art-list li{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
+    border-radius:10px;padding:11px 14px;font-size:14px;
+  }
+  .art-list .tag{font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px}
+  .tag.on{background:rgba(87,190,120,.18);color:#8fe0ac;border:1px solid rgba(87,190,120,.4)}
+  .tag.wait{background:rgba(255,196,84,.16);color:#f3cd7f;border:1px solid rgba(255,196,84,.36)}
+  .art-note{font-size:12.5px;color:#9c9284;margin-top:16px;line-height:1.6}
+
+  /* ---------- 通用分区 ---------- */
+  section{padding:66px 0}
+  .sec-head{max-width:720px;margin-bottom:34px}
+  .sec-kicker{
+    font-size:12.5px;font-weight:800;letter-spacing:3px;color:var(--gold);
+    text-transform:uppercase;margin-bottom:10px;
+  }
+  h2{font-size:clamp(23px,3vw,31px);font-weight:900;line-height:1.3;letter-spacing:.3px}
+  .sec-head p{margin-top:12px;color:var(--ink-soft);font-size:15.5px}
+
+  /* ---------- 入口卡片 ---------- */
+  .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .entry-card{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;display:flex;flex-direction:column;
+    transition:transform .2s,box-shadow .2s,border-color .2s;
+  }
+  .entry-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(28,26,23,.10);border-color:#c9bda6}
+  .entry-icon{
+    width:44px;height:44px;border-radius:11px;display:grid;place-items:center;
+    background:rgba(192,57,43,.09);margin-bottom:16px;
+  }
+  .entry-icon svg{width:23px;height:23px;stroke:var(--red)}
+  .entry-card h3{font-size:18px;font-weight:800;margin-bottom:9px}
+  .entry-card p{font-size:14.5px;color:var(--ink-soft);flex:1}
+  .entry-card .link{
+    margin-top:18px;font-size:14px;font-weight:700;color:var(--red);
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .entry-card .link svg{width:14px;height:14px}
+
+  /* ---------- 地址说明 ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+  .prose p{font-size:15.5px;color:var(--ink-soft);margin-bottom:15px}
+  .prose p strong{color:var(--ink);font-weight:700}
+  .checklist{list-style:none;display:grid;gap:13px}
+  .checklist li{
+    display:flex;gap:12px;background:var(--paper-2);
+    border:1px solid var(--line);border-radius:11px;padding:15px 17px;
+    font-size:14.5px;color:var(--ink-soft);
+  }
+  .checklist svg{width:19px;height:19px;flex:0 0 19px;margin-top:3px;stroke:var(--gold)}
+  .checklist b{color:var(--ink)}
+
+  /* ---------- 问题说明 ---------- */
+  .faq{border-top:1px solid var(--line)}
+  .faq-item{border-bottom:1px solid var(--line);padding:22px 0}
+  .faq-item h3{font-size:16.5px;font-weight:800;margin-bottom:8px;color:var(--ink)}
+  .faq-item p{font-size:15px;color:var(--ink-soft);max-width:60em}
+
+  /* ---------- 操作条 ---------- */
+  .cta-band{
+    background:var(--ink);color:#efe7d8;border-radius:20px;
+    padding:44px 40px;display:flex;align-items:center;justify-content:space-between;
+    gap:30px;flex-wrap:wrap;position:relative;overflow:hidden;
+  }
+  .cta-band::before{
+    content:"";position:absolute;left:-60px;top:-60px;width:220px;height:220px;
+    border-radius:50%;background:radial-gradient(circle,rgba(192,57,43,.45),transparent 70%);
+  }
+  .cta-band h2{font-size:clamp(21px,2.6vw,27px);color:#fff;position:relative}
+  .cta-band p{color:#b8ad9b;margin-top:9px;font-size:14.5px;position:relative;max-width:40em}
+  .cta-band .btn-primary{position:relative;flex:0 0 auto}
+  .btn-disabled{
+    background:#4a453e;color:#a99f8e;cursor:not-allowed;
+    pointer-events:none;
+  }
+
+  /* ---------- 页尾 ---------- */
+  footer.site{
+    border-top:1px solid var(--line);background:var(--paper-2);
+    padding:40px 0 34px;margin-top:20px;
+  }
+  .foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  .foot-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+  .foot-brand .brand-mark{width:34px;height:34px;flex:0 0 34px;border-radius:9px}
+  .foot-brand .brand-mark svg{width:21px;height:21px}
+  .foot-brand span{font-weight:800;font-size:16px}
+  .foot-desc{font-size:13.5px;color:var(--ink-soft);max-width:34em}
+  .foot-links{display:flex;gap:34px;flex-wrap:wrap;font-size:14px}
+  .foot-links div{display:grid;gap:8px}
+  .foot-links b{font-size:13px;letter-spacing:1.5px;color:var(--gold);font-weight:800}
+  .foot-links a{color:var(--ink-soft)}
+  .foot-links a:hover{color:var(--red)}
+  .foot-bottom{
+    margin-top:30px;padding-top:18px;border-top:1px dashed var(--line);
+    font-size:13px;color:#8b8275;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:34px;padding:46px 0 44px}
+    .entry-grid{grid-template-columns:1fr 1fr}
+    .split{grid-template-columns:1fr;gap:30px}
+    nav.main ul{gap:18px;font-size:14px}
+  }
+  @media (max-width:720px){
+    .head-inner{flex-wrap:wrap;gap:10px}
+    nav.main{width:100%;overflow-x:auto}
+    nav.main ul{gap:18px;white-space:nowrap;padding-bottom:4px}
+    .brand-text{font-size:16.5px}
+    .entry-grid{grid-template-columns:1fr}
+    section{padding:48px 0}
+    .cta-band{padding:32px 24px}
+    .hero-facts{gap:18px}
+    .hero-facts b{font-size:18px}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="每日大赛最新入口 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#f5f0e6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 44V22l14 12 14-12v22"/>
+          <circle cx="32" cy="48" r="3" fill="#f5f0e6" stroke="none"/>
+        </svg>
+      </span>
+      <span class="brand-text">每日大赛最新入口</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#entries">入口分类</a></li>
+        <li><a href="#address">地址说明</a></li>
+        <li><a href="#check">访问核对</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i></i>地址发布 · 实时汇总</span>
+        <h1>每日大赛最新入口</h1>
+        <p class="lead">这里汇总每日大赛最新入口的当前状态与访问路径，按线路类型分区呈现，并说明地址变动时如何确认。页面内容以可核对的地址信息为主，不提供活动规则或结果说明。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#entries">
+            查看入口分区
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#address">地址变动说明</a>
+        </div>
+        <ul class="hero-facts">
+          <li><b>3 类</b>线路分区</li>
+          <li><b>4 项</b>访问核对</li>
+          <li><b>每日</b>状态更新</li>
+        </ul>
+      </div>
+
+      <aside class="hero-art" aria-label="入口状态示意">
+        <div class="art-title">入口状态示意</div>
+        <ul class="art-list">
+          <li><span>主线路入口</span><span class="tag on">可用</span></li>
+          <li><span>备用线路入口</span><span class="tag on">可用</span></li>
+          <li><span>镜像线路入口</span><span class="tag wait">切换中</span></li>
+          <li><span>移动端入口</span><span class="tag on">可用</span></li>
+        </ul>
+        <p class="art-note">示意状态仅用于说明分区结构；实际可用地址以页面标注与官方发布为准。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 入口分类 -->
+  <section id="entries">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">Entry</div>
+        <h2>每日大赛最新入口的分区方式</h2>
+        <p>同一主题的访问需求并不相同：有人只想打开首页，有人需要备用地址，有人在手机上访问。入口分区按使用场景划分，方便直接定位。</p>
+      </div>
+      <div class="entry-grid">
+
+        <article class="entry-card">
+          <span class="entry-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z"/><path d="M12 8v4l3 2"/></svg>
+          </span>
+          <h3>主线路入口</h3>
+          <p>面向日常访问的主地址，通常是页面首要呈现的每日大赛最新入口。打开后可直接进入主题首页，适合网络环境稳定、希望一次到位的情况。</p>
+          <a class="link" href="#address">了解主线路说明
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="entry-card">
+          <span class="entry-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+          </span>
+          <h3>备用线路入口</h3>
+          <p>当主线路出现加载缓慢或无法打开时使用。备用线路与主线路指向同一主题，是每日大赛最新入口在地址变动期的常见补充，切换后访问内容一致。</p>
+          <a class="link" href="#check">查看切换核对
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="entry-card">
+          <span class="entry-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+          </span>
+          <h3>移动端入口</h3>
+          <p>针对手机浏览器优化的访问路径，版面更紧凑、点击区域更大。需要随时查看每日大赛最新入口的访问者，可优先使用这一类地址。</p>
+          <a class="link" href="#check">查看访问核对
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 地址说明 -->
+  <section id="address" style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap split">
+      <div>
+        <div class="sec-head" style="margin-bottom:20px">
+          <div class="sec-kicker">Address</div>
+          <h2>为什么入口地址会变化</h2>
+        </div>
+        <div class="prose">
+          <p>入口地址变动通常来自域名调整、线路维护或访问分流。对访问者而言，重要的不是记住某一个网址，而是知道<strong>在哪里确认当前的每日大赛最新入口</strong>。地址发布页的作用正在于此：集中呈现可访问路径，减少反复搜索。</p>
+          <p>本页把入口按主线路、备用线路、移动端三类呈现，并在每条路径旁标注使用场景。当某条线路处于切换状态时，页面会明确标出，而不是让访问者在多个来路不明的地址之间试错。</p>
+          <p>需要说明的是，本页只承担入口汇总与地址说明的职能，不涉及活动内容的解释。访问者打开入口后看到的页面，以对应地址的实际呈现为准。</p>
+        </div>
+      </div>
+      <div>
+        <div class="sec-head" style="margin-bottom:20px">
+          <div class="sec-kicker">Access</div>
+          <h2>访问前先看这几点</h2>
+        </div>
+        <ul class="checklist">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>核对页面标识。</b>确认地址页上的名称与本页一致，再继续跳转，避免进入同名但无关的页面。</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>先试主线路。</b>主线路正常时无需切换；出现长时间无响应再改用备用线路，避免频繁跳转。</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>手机优先移动端。</b>移动端入口的版面针对小屏调整，阅读与点击都更省力，适合随时查看。</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>记录当前可用地址。</b>把当天能打开的每日大赛最新入口记下来，下次可先从这里开始。</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 访问核对 -->
+  <section id="check">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">Checklist</div>
+        <h2>找到每日大赛最新入口后的四步核对</h2>
+        <p>入口是否可用，往往取决于几个简单条件。按顺序核对，比反复更换地址更有效。</p>
+      </div>
+      <div class="split">
+        <div class="prose">
+          <p><strong>第一步看网络。</strong>确认设备已连接网络，若使用公共网络或代理，先切换为普通连接再试。很多“打不开”的情况来自网络层，而不是入口本身。</p>
+          <p><strong>第二步看地址。</strong>对照地址页给出的路径，逐字检查是否完整，避免因复制不完整而进入错误页面。地址中多余的空格或字符同样会导致失败。</p>
+          <p><strong>第三步看线路。</strong>主线路无响应时，切换到备用线路再访问。若两类线路同时异常，通常是发布端正在调整，此时等待并刷新地址页更合适。</p>
+          <p><strong>第四步看终端。</strong>手机与电脑的访问结果可能不同。用手机打不开时，可换用移动端入口；用电脑访问时，优先使用主线路。四项核对完成，基本可以判断问题出在哪一层。</p>
+        </div>
+        <ul class="checklist">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>网络：</b>普通连接、信号稳定，未启用异常代理。</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>地址：</b>与发布页一致，完整无多余字符。</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>线路：</b>主线路与备用线路分别测试，记录结果。</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>终端：</b>手机与电脑分别验证，选择匹配的入口类型。</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section id="faq" class="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">FAQ</div>
+        <h2>关于入口的常见问题</h2>
+      </div>
+      <div class="faq-item">
+        <h3>每日大赛最新入口和旧地址有什么区别？</h3>
+        <p>区别主要在访问路径。旧地址可能因线路调整而失效，最新入口则是当前仍可访问的路径。两者指向同一主题，但可用状态不同，因此以地址页标注为准。</p>
+      </div>
+      <div class="faq-item">
+        <h3>为什么同一时间有人能打开、有人不能？</h3>
+        <p>入口可达性受网络环境、设备与所在区域影响。同一地址在不同网络下的结果可能不同，这也是页面同时列出主线路与备用线路的原因。</p>
+      </div>
+      <div class="faq-item">
+        <h3>需要同时保存多个地址吗？</h3>
+        <p>建议保存当前可用的主线路与一条备用线路即可。地址变动时回到本页重新确认，比长期依赖旧链接更可靠。</p>
+      </div>
+      <div class="faq-item">
+        <h3>入口页会说明活动内容吗？</h3>
+        <p>不会。本页的职责是入口汇总与地址说明，活动相关内容以打开入口后的页面为准，本页不做转述或延伸。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 操作条 -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>把每日大赛最新入口留在手边</h2>
+          <p>本页提供入口汇总的离线留存入口，方便在地址变动时快速回到地址页核对。文件内容以页面标注为准。</p>
+        </div>
+        <a class="btn btn-primary btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" role="button" aria-label="下载功能暂未开放">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="#f5f0e6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 44V22l14 12 14-12v22"/>
+              <circle cx="32" cy="48" r="3" fill="#f5f0e6" stroke="none"/>
+            </svg>
+          </span>
+          <span>每日大赛最新入口</span>
+        </div>
+        <p class="foot-desc">地址发布与入口汇总页面，按主线路、备用线路与移动端分区呈现，帮助访问者确认当前可用的每日大赛最新入口。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <b>页面导航</b>
+          <a href="#entries">入口分类</a>
+          <a href="#address">地址说明</a>
+        </div>
+        <div>
+          <b>使用帮助</b>
+          <a href="#check">访问核对</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div>
+          <b>页首</b>
+          <a href="#top">返回顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>本页仅提供入口汇总与地址说明，不涉及活动内容解释。</span>
+      <span>每日大赛最新入口 · 地址发布页</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
