@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91次元动漫官网-91次元动漫官网首页入口_次元动漫在线追番与新番更新</title>
+<meta name="description" content="91次元动漫官网首页：集中浏览次元动漫在线追番入口、新番更新时间、分类番剧与观看指引，快速找到想看的动画内容。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314182b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%235cd0ff' stroke-width='2.4'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%23ff7ab8'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0d1020;
+    --bg-soft:#141a30;
+    --card:#171e36;
+    --line:rgba(255,255,255,.09);
+    --text:#e8ecf8;
+    --muted:#9aa5c4;
+    --cyan:#5cd0ff;
+    --pink:#ff7ab8;
+    --lime:#b9f36b;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block}
+  .wrap{width:min(1120px,92vw);margin:0 auto}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(13,16,32,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;gap:28px;
+    height:68px;
+  }
+  .logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .logo-mark{width:34px;height:34px}
+  .logo-text{
+    font-size:17px;font-weight:700;letter-spacing:.02em;
+    background:linear-gradient(92deg,var(--cyan),var(--pink));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    white-space:nowrap;
+  }
+  nav.links{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+  nav.links a{
+    font-size:14.5px;color:var(--muted);padding:6px 2px;
+    border-bottom:2px solid transparent;transition:.2s;
+  }
+  nav.links a:hover{color:var(--text);border-color:var(--cyan)}
+  .nav-cta{
+    font-size:14px;font-weight:600;color:#0b0f1d;
+    background:linear-gradient(92deg,var(--cyan),#8ee6ff);
+    padding:9px 18px;border-radius:999px;white-space:nowrap;
+    transition:.2s;
+  }
+  .nav-cta:hover{filter:brightness(1.08)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:64px 0 58px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(560px 320px at 82% 8%,rgba(92,208,255,.20),transparent 70%),
+      radial-gradient(480px 300px at 95% 88%,rgba(255,122,184,.16),transparent 70%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;letter-spacing:.16em;color:var(--cyan);
+    border:1px solid rgba(92,208,255,.35);
+    padding:5px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--pink)}
+  h1{
+    font-size:clamp(28px,4.3vw,46px);
+    line-height:1.25;font-weight:800;letter-spacing:.01em;
+  }
+  h1 .grad{
+    background:linear-gradient(92deg,var(--cyan) 10%,var(--pink) 90%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    margin-top:20px;font-size:16px;color:var(--muted);max-width:34em;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(92deg,var(--cyan),#7ad4ff);
+    color:#0b0f1d;font-weight:700;font-size:15px;
+    padding:13px 26px;border-radius:12px;transition:.2s;
+  }
+  .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.06)}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid rgba(255,255,255,.18);color:var(--text);
+    font-size:15px;padding:13px 24px;border-radius:12px;transition:.2s;
+  }
+  .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+  .hero-stats{
+    display:flex;gap:34px;margin-top:38px;flex-wrap:wrap;
+  }
+  .hero-stats div strong{display:block;font-size:22px;color:var(--text)}
+  .hero-stats div span{font-size:13px;color:var(--muted)}
+
+  .hero-art{
+    position:relative;aspect-ratio:1/1;max-width:420px;margin-left:auto;width:100%;
+  }
+  .hero-art .ring{
+    position:absolute;inset:8%;border-radius:50%;
+    border:1px dashed rgba(92,208,255,.35);
+    animation:spin 26s linear infinite;
+  }
+  .hero-art .ring:nth-child(2){inset:20%;border-color:rgba(255,122,184,.3);animation-direction:reverse;animation-duration:34s}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero-art .core{
+    position:absolute;inset:0;display:grid;place-items:center;
+  }
+  .hero-art .core svg{width:52%;height:auto}
+
+  /* ---------- section ---------- */
+  section{padding:64px 0}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+  .sec-head h2{font-size:clamp(21px,2.6vw,27px);font-weight:700}
+  .sec-head h2 em{
+    font-style:normal;color:var(--cyan);
+  }
+  .sec-head p{font-size:14px;color:var(--muted);max-width:42em}
+  .sec-head .more{font-size:14px;color:var(--muted);border-bottom:1px solid transparent}
+  .sec-head .more:hover{color:var(--cyan);border-color:var(--cyan)}
+
+  /* ---------- cards ---------- */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);padding:26px 24px;
+    transition:.25s;
+  }
+  .card:hover{border-color:rgba(92,208,255,.45);transform:translateY(-3px)}
+  .card .ico{
+    width:42px;height:42px;border-radius:11px;
+    display:grid;place-items:center;margin-bottom:16px;
+    background:rgba(92,208,255,.12);
+  }
+  .card .ico svg{width:22px;height:22px}
+  .card h3{font-size:17px;font-weight:700;margin-bottom:9px}
+  .card p{font-size:14.5px;color:var(--muted);line-height:1.8}
+
+  /* ---------- schedule ---------- */
+  #schedule{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .day-list{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+  .day{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 12px;text-align:center;
+  }
+  .day b{display:block;font-size:14px;margin-bottom:10px;color:var(--text)}
+  .day .tag{
+    display:block;font-size:12.5px;color:var(--muted);
+    padding:5px 0;border-top:1px dashed rgba(255,255,255,.08);
+    line-height:1.55;
+  }
+  .day .tag:first-of-type{border-top:0}
+  .day .tag.new{color:var(--lime)}
+  .day.today{border-color:var(--pink);box-shadow:0 0 0 1px rgba(255,122,184,.25) inset}
+  .day.today b{color:var(--pink)}
+
+  /* ---------- categories ---------- */
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .cat{
+    display:flex;flex-direction:column;gap:6px;
+    background:linear-gradient(160deg,#1b2340,#141a30);
+    border:1px solid var(--line);border-radius:14px;
+    padding:20px 20px 22px;transition:.25s;
+  }
+  .cat:hover{border-color:rgba(255,122,184,.45)}
+  .cat span.en{font-size:11.5px;letter-spacing:.18em;color:var(--cyan);text-transform:uppercase}
+  .cat strong{font-size:16px}
+  .cat small{font-size:13px;color:var(--muted)}
+
+  /* ---------- watch guide ---------- */
+  .guide{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+  .steps{list-style:none;counter-reset:s}
+  .steps li{
+    position:relative;padding:0 0 26px 52px;counter-increment:s;
+  }
+  .steps li::before{
+    content:counter(s,decimal-leading-zero);
+    position:absolute;left:0;top:0;
+    width:36px;height:36px;border-radius:10px;
+    display:grid;place-items:center;
+    font-size:13px;font-weight:700;color:var(--cyan);
+    background:rgba(92,208,255,.1);border:1px solid rgba(92,208,255,.28);
+  }
+  .steps li:last-child{padding-bottom:0}
+  .steps h3{font-size:16.5px;margin-bottom:6px}
+  .steps p{font-size:14.5px;color:var(--muted)}
+  .note{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 26px;
+  }
+  .note h3{font-size:17px;margin-bottom:14px}
+  .note ul{list-style:none;display:grid;gap:12px}
+  .note li{
+    font-size:14.5px;color:var(--muted);
+    padding-left:18px;position:relative;
+  }
+  .note li::before{
+    content:"";position:absolute;left:0;top:.62em;
+    width:6px;height:6px;border-radius:2px;background:var(--pink);
+  }
+  .note li b{color:var(--text);font-weight:600}
+
+  /* ---------- faq ---------- */
+  .faq{display:grid;gap:14px}
+  details{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:13px;padding:0 22px;transition:.2s;
+  }
+  details[open]{border-color:rgba(92,208,255,.4)}
+  summary{
+    cursor:pointer;list-style:none;
+    font-size:15.5px;font-weight:600;
+    padding:18px 0;display:flex;justify-content:space-between;gap:16px;align-items:center;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";font-size:20px;color:var(--cyan);font-weight:400;line-height:1;
+    transition:.2s;
+  }
+  details[open] summary::after{content:"–"}
+  details p{font-size:14.5px;color:var(--muted);padding:0 0 20px}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    background:var(--bg-soft);
+    padding:44px 0 30px;
+  }
+  .foot-top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:30px}
+  .foot-brand{max-width:320px}
+  .foot-brand .logo{margin-bottom:14px}
+  .foot-brand p{font-size:13.5px;color:var(--muted)}
+  .foot-cols{display:flex;gap:64px;flex-wrap:wrap}
+  .foot-cols h4{font-size:13px;letter-spacing:.12em;color:var(--muted);margin-bottom:12px;font-weight:600}
+  .foot-cols ul{list-style:none;display:grid;gap:9px}
+  .foot-cols a{font-size:14px;color:var(--text);opacity:.85}
+  .foot-cols a:hover{color:var(--cyan);opacity:1}
+  .foot-bottom{
+    border-top:1px solid var(--line);padding-top:20px;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-size:12.5px;color:var(--muted);
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:960px){
+    .hero-inner{grid-template-columns:1fr;gap:34px}
+    .hero-art{max-width:300px;margin:0 auto;order:-1}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .cat-grid{grid-template-columns:1fr 1fr}
+    .guide{grid-template-columns:1fr;gap:30px}
+    .day-list{grid-template-columns:repeat(4,1fr)}
+  }
+  @media (max-width:680px){
+    .nav{height:auto;padding:12px 0;flex-wrap:wrap;gap:12px}
+    nav.links{order:3;width:100%;margin-left:0;gap:16px;overflow-x:auto;padding-bottom:2px;flex-wrap:nowrap}
+    nav.links a{font-size:13.5px;white-space:nowrap}
+    .nav-cta{margin-left:auto}
+    .hero{padding:40px 0 44px}
+    .hero p.lead{font-size:15px}
+    .hero-stats{gap:24px;margin-top:28px}
+    section{padding:48px 0}
+    .grid-3{grid-template-columns:1fr}
+    .day-list{grid-template-columns:repeat(2,1fr)}
+    .cat-grid{grid-template-columns:1fr}
+    .foot-cols{gap:36px}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="91次元动漫官网 首页">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#1b2340"/>
+        <circle cx="16" cy="16" r="7" fill="none" stroke="#5cd0ff" stroke-width="2.2"/>
+        <circle cx="16" cy="16" r="2.6" fill="#ff7ab8"/>
+        <path d="M16 4.5v2.2M16 25.3v2.2M4.5 16h2.2M25.3 16h2.2" stroke="#5cd0ff" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">91次元动漫官网</span>
+    </a>
+    <nav class="links" aria-label="主导航">
+      <a href="#explore">追番入口</a>
+      <a href="#schedule">新番时间</a>
+      <a href="#category">分类番剧</a>
+      <a href="#guide">观看指引</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="nav-cta" href="#explore">进入首页</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="kicker"><span class="dot"></span>次元动漫 · 追番首页</span>
+        <h1>91次元动漫官网</h1>
+        <p class="lead">
+          这里是 91次元动漫官网 的首页入口。集中整理次元动漫的追番入口、新番更新时间与番剧分类，
+          让想看的动画更容易被找到，也让每周的追番节奏一目了然。
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#explore">
+            进入追番入口
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="btn-ghost" href="#schedule">查看新番时间</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>7 天</strong><span>周更节奏一览</span></div>
+          <div><strong>8 类</strong><span>番剧分类导航</span></div>
+          <div><strong>5 步</strong><span>观看指引路径</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="core">
+          <svg viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#5cd0ff"/>
+                <stop offset="1" stop-color="#ff7ab8"/>
+              </linearGradient>
+            </defs>
+            <polygon points="100,18 172,60 172,140 100,182 28,140 28,60" fill="none" stroke="url(#g1)" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="100" cy="100" r="34" fill="none" stroke="#5cd0ff" stroke-width="2.5" opacity=".7"/>
+            <circle cx="100" cy="100" r="13" fill="#ff7ab8" opacity=".9"/>
+            <path d="M100 66v-16M100 150v-16M66 100H50M150 100h-16" stroke="#b9f36b" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE -->
+  <section id="explore">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>追番入口：<em>从首页出发</em></h2>
+          <p>91次元动漫官网 首页把访问者最常做的三件事放在最前面：找到入口、确认更新、按分类筛选。</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="3" stroke="#5cd0ff" stroke-width="1.8"/>
+              <path d="M10 9.5l5 2.5-5 2.5z" fill="#5cd0ff"/>
+            </svg>
+          </div>
+          <h3>在线追番入口</h3>
+          <p>从首页进入次元动漫的番剧列表，按连载状态与更新时间浏览，减少在多个页面之间来回跳转的步骤。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.5" stroke="#ff7ab8" stroke-width="1.8"/>
+              <path d="M12 7.5V12l3 2" stroke="#ff7ab8" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>更新节奏查询</h3>
+          <p>新番时间区按周一到周日排列，一眼看清哪天更新哪些内容，方便安排碎片时间与固定追番时段。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h10M4 17h13" stroke="#b9f36b" stroke-width="1.9" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>分类快速筛选</h3>
+          <p>热血、日常、科幻、恋爱等分类并列展示，按题材偏好缩小范围，再进入具体番剧页面了解详情。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>新番<em>更新时间</em></h2>
+          <p>以一周为周期查看更新分布。标记为「新」的条目表示当周新上架内容，具体以页面实际更新为准。</p>
+        </div>
+      </div>
+      <div class="day-list">
+        <div class="day">
+          <b>周一</b>
+          <span class="tag new">新番 2 部</span>
+          <span class="tag">连载续更</span>
+        </div>
+        <div class="day">
+          <b>周二</b>
+          <span class="tag new">新番 1 部</span>
+          <span class="tag">连载续更</span>
+        </div>
+        <div class="day today">
+          <b>周三</b>
+          <span class="tag new">新番 3 部</span>
+          <span class="tag">专题推荐</span>
+        </div>
+        <div class="day">
+          <b>周四</b>
+          <span class="tag new">新番 1 部</span>
+          <span class="tag">连载续更</span>
+        </div>
+        <div class="day">
+          <b>周五</b>
+          <span class="tag new">新番 2 部</span>
+          <span class="tag">连载续更</span>
+        </div>
+        <div class="day">
+          <b>周六</b>
+          <span class="tag new">新番 4 部</span>
+          <span class="tag">周末特辑</span>
+        </div>
+        <div class="day">
+          <b>周日</b>
+          <span class="tag new">新番 2 部</span>
+          <span class="tag">番剧回顾</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY -->
+  <section id="category">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>番剧<em>分类导航</em></h2>
+          <p>按题材与形式划分的常见分类，帮助访问者在 91次元动漫官网 首页快速定位想看的类型。</p>
+        </div>
+      </div>
+      <div class="cat-grid">
+        <a class="cat" href="#explore"><span class="en">Shonen</span><strong>热血冒险</strong><small>成长、战斗与伙伴</small></a>
+        <a class="cat" href="#explore"><span class="en">Slice</span><strong>日常治愈</strong><small>轻松节奏与生活感</small></a>
+        <a class="cat" href="#explore"><span class="en">Sci-Fi</span><strong>科幻机战</strong><small>设定与世界观向</small></a>
+        <a class="cat" href="#explore"><span class="en">Romance</span><strong>恋爱校园</strong><small>情感线与青春群像</small></a>
+        <a class="cat" href="#explore"><span class="en">Fantasy</span><strong>奇幻异世界</strong><small>架空设定与冒险</small></a>
+        <a class="cat" href="#explore"><span class="en">Mystery</span><strong>悬疑推理</strong><small>线索推进与反转</small></a>
+        <a class="cat" href="#explore"><span class="en">Comedy</span><strong>搞笑短篇</strong><small>单集轻量易追</small></a>
+        <a class="cat" href="#explore"><span class="en">Movie</span><strong>剧场版</strong><small>完整长篇故事</small></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>观看<em>指引</em></h2>
+          <p>第一次访问 91次元动漫官网 时，可以按下面的顺序完成从入口到播放的完整流程。</p>
+        </div>
+      </div>
+      <div class="guide">
+        <ol class="steps">
+          <li>
+            <h3>从首页进入追番入口</h3>
+            <p>点击首屏或导航中的「追番入口」，进入次元动漫的番剧列表页面，先看清整体内容分布。</p>
+          </li>
+          <li>
+            <h3>用分类与状态缩小范围</h3>
+            <p>结合题材分类与连载状态筛选，把候选范围压缩到几部，避免在长列表中反复翻找。</p>
+          </li>
+          <li>
+            <h3>对照新番时间表安排</h3>
+            <p>先看周更时间，再决定先追哪一部。固定更新日的内容适合放在固定时段观看。</p>
+          </li>
+          <li>
+            <h3>进入详情页确认信息</h3>
+            <p>在番剧详情页核对集数、简介与更新情况，确认与自己的预期一致后再开始观看。</p>
+          </li>
+          <li>
+            <h3>收藏与回访</h3>
+            <p>把常看的番剧加入收藏，下次回到 91次元动漫官网 时可直接从收藏继续，不必重新搜索。</p>
+          </li>
+        </ol>
+        <aside class="note">
+          <h3>使用提示</h3>
+          <ul>
+            <li><b>网络环境：</b>播放流畅度与本地网络状况有关，缓冲较慢时可切换网络后重试。</li>
+            <li><b>更新差异：</b>各番剧更新节奏不同，时间表为整体分布参考，具体以页面显示为准。</li>
+            <li><b>内容偏好：</b>利用分类导航建立自己的观看清单，比盲目浏览更省时间。</li>
+            <li><b>回访习惯：</b>固定在同一天回访，容易跟上连载进度，减少剧情衔接断层。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>常见<em>问题</em></h2>
+          <p>关于 91次元动漫官网 首页入口与浏览方式的高频疑问。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>91次元动漫官网首页主要提供什么？</summary>
+          <p>首页集中呈现追番入口、新番更新时间、番剧分类与观看指引，作用是帮助访问者更快找到想看的次元动漫内容，而不是单纯罗列页面元素。</p>
+        </details>
+        <details>
+          <summary>如何快速找到本周更新的番剧？</summary>
+          <p>查看「新番更新时间」区，按周一至周日对照当日标记，再进入追番入口确认具体番剧的更新状态。</p>
+        </details>
+        <details>
+          <summary>分类导航和入口有什么区别？</summary>
+          <p>分类导航解决「想看什么类型」的问题，入口解决「从哪里开始看」的问题。两者配合使用，能显著减少筛选时间。</p>
+        </details>
+        <details>
+          <summary>更新时间为固定值吗？</summary>
+          <p>时间表描述的是整体更新分布，用于安排追番节奏。单部番剧的实际更新时间以其页面显示为准。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="#1b2340"/>
+            <circle cx="16" cy="16" r="7" fill="none" stroke="#5cd0ff" stroke-width="2.2"/>
+            <circle cx="16" cy="16" r="2.6" fill="#ff7ab8"/>
+          </svg>
+          <span class="logo-text">91次元动漫官网</span>
+        </div>
+        <p>次元动漫追番首页，整理入口、更新与分类信息，帮助访问者更高效地浏览动画内容。</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>页面导航</h4>
+          <ul>
+            <li><a href="#explore">追番入口</a></li>
+            <li><a href="#schedule">新番时间</a></li>
+            <li><a href="#category">分类番剧</a></li>
+            <li><a href="#guide">观看指引</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>内容分类</h4>
+          <ul>
+            <li><a href="#category">热血冒险</a></li>
+            <li><a href="#category">日常治愈</a></li>
+            <li><a href="#category">科幻机战</a></li>
+            <li><a href="#category">剧场版</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>其他</h4>
+          <ul>
+            <li><a href="#faq">常见问题</a></li>
+            <li><a href="#top">回到顶部</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>91次元动漫官网 · 次元动漫追番首页</span>
+      <span>页面信息仅作浏览指引，具体内容以实际页面为准。</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
